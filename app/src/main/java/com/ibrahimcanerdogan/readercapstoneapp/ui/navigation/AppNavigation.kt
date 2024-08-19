@@ -1,7 +1,18 @@
 package com.ibrahimcanerdogan.readercapstoneapp.ui.navigation
 
+import android.content.Context
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -12,24 +23,48 @@ import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.detail.DetailScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.home.HomeScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.home.HomeViewModel
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.login.LoginScreen
+import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.onboarding.OnboardingScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.search.SearchScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.search.SearchViewModel
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.static.StaticScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.update.UpdateScreen
+import kotlinx.coroutines.flow.first
 
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
-    val startDestination: String = if (FirebaseAuth.getInstance().currentUser == null) {
-        AppScreen.LoginScreen.name
+    var startDestination: String? = null
+    val context = LocalContext.current
+    val dataStore = context.dataStore
+    val seenOnboarding = remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        val seen = dataStore.data.first()[PREFERENCES_KEY_ONBOARDING] ?: false
+        seenOnboarding.value = seen
+    }
+
+    val currentUser = FirebaseAuth.getInstance().currentUser == null
+
+    if (currentUser && !seenOnboarding.value) {
+        startDestination = AppScreen.OnboardingScreen.name
+        LaunchedEffect(Unit) {
+            dataStore.edit { preferences ->
+                preferences[PREFERENCES_KEY_ONBOARDING] = true
+            }
+        }
+    }else if (currentUser) {
+        startDestination = AppScreen.LoginScreen.name
     } else {
-        AppScreen.ReaderHomeScreen.name
+        startDestination = AppScreen.ReaderHomeScreen.name
     }
 
     NavHost(
         navController = navController,
         startDestination = startDestination
     ) {
+        composable(AppScreen.OnboardingScreen.name) {
+            OnboardingScreen(navController = navController)
+        }
 
         composable(AppScreen.LoginScreen.name) {
             LoginScreen(navController = navController)
@@ -73,3 +108,7 @@ fun AppNavigation() {
         }
     }
 }
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
+private val PREFERENCES_KEY_ONBOARDING = booleanPreferencesKey("onboarding_key")

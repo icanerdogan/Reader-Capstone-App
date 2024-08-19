@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Reader Capstone App</string>
+    <string name="app_banner_name">ReaderCapstone</string>
+    <!--Onboarding-->
+    <string name="onboarding1_title">Discover Your Next Favorite Book</string>
+    <string name="onboarding1_subtitle">Explore a vast collection of books tailored to your tastes.Dive into new worlds and let your imagination soar.</string>
+    <string name="onboarding2_title">Organize Your Reading Journey</string>
+    <string name="onboarding2_subtitle">Keep track of the books you have read, create personalized lists,and never lose sight of your literary adventures.</string>
+    <string name="onboarding3_title">Connect with a Community of Readers</string>
+    <string name="onboarding3_subtitle">Share your thoughts, get recommendations, and connect with fellow book lovers around the world.</string>
+
 </resources>
