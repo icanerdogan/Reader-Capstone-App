@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "981296064085",
+    "project_id": "reader-capstone-app-8b1fb",
+    "storage_bucket": "reader-capstone-app-8b1fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981296064085:android:ef6ec842bea71b3ae156dc",
+        "android_client_info": {
+          "package_name": "com.ibrahimcanerdogan.readercapstoneapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6TkHCo1MqJ8UyPYMFrM0HJ3BJJ5MWon0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
