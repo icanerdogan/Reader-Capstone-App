@@ -52,7 +52,7 @@ fun ReaderCapstoneAppTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = BaseTypography,
         content = content
     )
 }
