@@ -25,8 +25,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ibrahimcanerdogan.readercapstoneapp.ui.theme.BaseTypography
 import com.ibrahimcanerdogan.readercapstoneapp.ui.theme.Color1Green
-import com.ibrahimcanerdogan.readercapstoneapp.ui.theme.Typography
 
 @Composable
 fun FABContent(onTap: () -> Unit) {
@@ -68,6 +68,7 @@ fun OnboardingNextButton(imageVector: ImageVector, onClick: () -> Unit = {}) {
     }
 }
 
+@Preview
 @Composable
 fun OnboardingGetStartedButton(onClick: () -> Unit = {}) {
     FloatingActionButton(
@@ -78,6 +79,6 @@ fun OnboardingGetStartedButton(onClick: () -> Unit = {}) {
         containerColor = Color1Green,
         contentColor = Color.White
     ) {
-        Text(text = "Get Started", style = Typography.titleSmall)
+        Text(text = "Get Started", style = BaseTypography.titleSmall)
     }
 }

@@ -34,7 +34,7 @@ import com.ibrahimcanerdogan.readercapstoneapp.ui.navigation.AppScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.theme.Color1DarkGreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.theme.Color1Green
 import com.ibrahimcanerdogan.readercapstoneapp.ui.theme.Color1White
-import com.ibrahimcanerdogan.readercapstoneapp.ui.theme.Typography
+import com.ibrahimcanerdogan.readercapstoneapp.ui.theme.BaseTypography
 import com.ibrahimcanerdogan.readercapstoneapp.ui.widget.OnboardingGetStartedButton
 import com.ibrahimcanerdogan.readercapstoneapp.ui.widget.OnboardingNextButton
 
@@ -87,7 +87,7 @@ fun OnboardingScreen(navController: NavHostController) {
                 modifier = Modifier.fillMaxWidth().weight(1f),
                 textAlign = TextAlign.Center,
                 color = Color.Black,
-                style = Typography.titleLarge
+                style = BaseTypography.titleLarge
             )
             Image(
                 painter = painterResource(selectedOption.imageVector),
@@ -129,7 +129,7 @@ fun OnboardingScreen(navController: NavHostController) {
                     .weight(.5f),
                 textAlign = TextAlign.Center,
                 color = Color.Black,
-                style = Typography.titleSmall
+                style = BaseTypography.titleSmall
             )
             Text(
                 text = stringResource(id = selectedOption.subtitle),
@@ -139,7 +139,7 @@ fun OnboardingScreen(navController: NavHostController) {
                     .weight(.5f),
                 textAlign = TextAlign.Center,
                 color = Color.Black,
-                style = Typography.bodyLarge
+                style = BaseTypography.bodyLarge
             )
 
             Spacer(modifier = Modifier.weight(1f))
