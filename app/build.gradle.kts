@@ -65,10 +65,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.material3.android)
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
@@ -110,6 +107,12 @@ dependencies {
 
     // JSON Converter
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Google Font
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.6.8")
+
+    // Datastore Preferences
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
 
     // Splash API
     implementation("androidx.core:core-splashscreen:1.0.1")

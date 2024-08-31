@@ -41,5 +41,6 @@ fun ReaderApp() {
             ) {
                 AppNavigation()
             }
-        })
+        }
+    )
 }

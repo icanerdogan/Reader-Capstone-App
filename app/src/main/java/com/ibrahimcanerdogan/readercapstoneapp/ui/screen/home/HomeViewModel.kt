@@ -16,8 +16,9 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val repository: FireRepository
 ): ViewModel() {
-    val data: MutableState<SourceState<List<MBook>, Boolean, Exception>>
-            = mutableStateOf(SourceState(listOf(), true,Exception("")))
+    val data: MutableState<SourceState<List<MBook>, Boolean, Exception>> = mutableStateOf(
+        SourceState(listOf(), true,Exception(""))
+    )
 
     init {
         getAllBooksFromDatabase()
@@ -30,7 +31,6 @@ class HomeViewModel @Inject constructor(
             if (!data.value.stateData.isNullOrEmpty()) data.value.stateLoading = false
         }
         Log.d("GET", "getAllBooksFromDatabase: ${data.value.stateData?.toList().toString()}")
-
     }
 
 
