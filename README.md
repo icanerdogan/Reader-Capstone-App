@@ -1,11 +1,16 @@
 <h1>ReaderCapstone</h1>
 <ul>
+    <li><h2>Splash Screen</h2></li>
+  
+  Splash - Light        |  Splash - Dark
+:-------------------------:|:-------------------------: 
+![Splash - Light](https://github.com/user-attachments/assets/9d04fb37-00c6-474d-b0b1-7cdf0709e3ab) | ![Splash - Dark](https://github.com/user-attachments/assets/6ebbf7d7-4bb8-4811-b32f-211a666dc1bb)
+
+
   <li><h2>Onboarding Screen</h2></li>
 
-  ![Onboarding Screen](https://github.com/user-attachments/assets/67984eaa-7913-40e6-b070-fe204924cc10)
-
-  <li><h2>Splash Screen</h2></li>
-  
-  ![Splash Screen](https://github.com/user-attachments/assets/ac19892e-8545-40e2-a2bd-8e717aa2fd47)
+  Onboarding - 1            |  Onboarding - 2 |  Onboarding - 3       
+:-------------------------:|:-------------------------: |:-------------------------:
+![Android Onboarding Design - 1](https://github.com/user-attachments/assets/fa752cdc-c37e-4406-b000-f8ba80b5f8dd) | ![Android Onboarding Design - 2](https://github.com/user-attachments/assets/552a6c4b-c737-4419-9945-154d8e6e98c8) | ![Android Onboarding Design - 3](https://github.com/user-attachments/assets/8fab8cd0-4c70-42c8-bbbc-1d276d23e7b4) |
 
 </ul>
