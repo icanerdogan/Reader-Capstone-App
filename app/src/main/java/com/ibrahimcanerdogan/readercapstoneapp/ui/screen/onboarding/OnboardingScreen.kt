@@ -91,7 +91,7 @@ fun OnboardingScreen(navController: NavHostController) {
             )
             Image(
                 painter = painterResource(selectedOption.imageVector),
-                modifier = Modifier.fillMaxWidth().weight(3f),
+                modifier = Modifier.fillMaxWidth().weight(3f).padding(10.dp),
                 contentScale = ContentScale.Crop,
                 contentDescription = "Onboarding Icon"
             )
