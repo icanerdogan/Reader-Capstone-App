@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(): ViewModel() {
+class SignViewModel @Inject constructor(): ViewModel() {
     // val loadingState = MutableStateFlow(LoadingState.IDLE)
     private val auth: FirebaseAuth = Firebase.auth
 

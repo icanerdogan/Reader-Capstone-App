@@ -39,7 +39,7 @@ import com.ibrahimcanerdogan.readercapstoneapp.ui.widget.SignInputField
 fun SignUpScreen(
     modifier: Modifier = Modifier,
     navController: NavController,
-    viewModel: LoginViewModel = hiltViewModel()
+    viewModel: SignViewModel = hiltViewModel()
 ) {
     val inputFullName = remember { mutableStateOf("") }
     val inputUsername = remember { mutableStateOf("") }
@@ -62,7 +62,12 @@ fun SignUpScreen(
             ) {
                 Column(modifier = Modifier.wrapContentSize().padding(horizontal = 15.dp)) {
                     SignBackButton {
-                        navController.navigate(AppScreen.SignInScreen.name)
+                        navController.navigate(AppScreen.SignInScreen.name) {
+                            popUpTo(navController.graph.startDestinationId) {
+                                inclusive = true
+                            }
+                            launchSingleTop = true
+                        }
                     }
                     Image(painter = painterResource(id = R.drawable.icon_sign_up), contentDescription = "Sign up Icon")
                 }

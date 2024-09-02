@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Password
@@ -39,7 +38,7 @@ import com.ibrahimcanerdogan.readercapstoneapp.ui.widget.SignTextButton
 fun SignInScreen(
     modifier: Modifier = Modifier,
     navController: NavController,
-    viewModel: LoginViewModel = hiltViewModel()
+    viewModel: SignViewModel = hiltViewModel()
 ) {
     val inputEmailUsername = remember { mutableStateOf("") }
     val inputPassword = remember { mutableStateOf("") }
