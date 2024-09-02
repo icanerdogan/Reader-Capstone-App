@@ -74,7 +74,6 @@ fun StaticScreen(navController: NavController,
                         Icon(imageVector = Icons.Sharp.Person,
                             contentDescription = "icon" )
                     }
-                    //paul @ me.com
                     Text(text = "Hi, ${
                         currentUser?.email.toString().split("@")[0].uppercase(Locale.getDefault())
                     }")

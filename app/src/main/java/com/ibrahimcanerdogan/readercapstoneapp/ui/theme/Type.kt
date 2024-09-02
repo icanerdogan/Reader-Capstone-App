@@ -76,21 +76,21 @@ val serifFontFamily = FontFamily(
 val SerifTypography = Typography(
     titleLarge = TextStyle(
         fontFamily = serifFontFamily,
-        fontWeight = FontWeight.Bold,
+        fontWeight = FontWeight.Normal,
         fontSize = 32.sp,
         lineHeight = 28.sp,
         letterSpacing = 0.sp
     ),
     titleMedium = TextStyle(
         fontFamily = serifFontFamily,
-        fontWeight = FontWeight.Bold,
+        fontWeight = FontWeight.Normal,
         fontSize = 27.sp,
         lineHeight = 25.sp,
         letterSpacing = 0.sp
     ),
     titleSmall = TextStyle(
         fontFamily = serifFontFamily,
-        fontWeight = FontWeight.Bold,
+        fontWeight = FontWeight.Normal,
         fontSize = 18.sp,
         lineHeight = 20.sp,
         letterSpacing = 0.sp
@@ -104,7 +104,7 @@ val SerifTypography = Typography(
     ),
     labelSmall = TextStyle(
         fontFamily = serifFontFamily,
-        fontWeight = FontWeight.Medium,
+        fontWeight = FontWeight.Normal,
         fontSize = 11.sp,
         lineHeight = 16.sp,
         letterSpacing = 0.5.sp

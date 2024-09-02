@@ -2,8 +2,8 @@ package com.ibrahimcanerdogan.readercapstoneapp.ui.navigation
 
 enum class AppScreen {
     OnboardingScreen,
-    LoginScreen,
-    CreateAccountScreen,
+    SignInScreen,
+    SignUpScreen,
     ReaderHomeScreen,
     SearchScreen,
     DetailScreen,
@@ -13,8 +13,8 @@ enum class AppScreen {
     companion object {
         fun fromRoute(route: String?): AppScreen = when(route?.substringBefore("/")) {
             OnboardingScreen.name -> OnboardingScreen
-            LoginScreen.name -> LoginScreen
-            CreateAccountScreen.name -> CreateAccountScreen
+            SignInScreen.name -> SignInScreen
+            SignUpScreen.name -> SignUpScreen
             ReaderHomeScreen.name -> ReaderHomeScreen
             SearchScreen.name -> SearchScreen
             DetailScreen.name -> DetailScreen
