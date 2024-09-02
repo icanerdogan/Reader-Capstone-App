@@ -3,6 +3,7 @@ package com.ibrahimcanerdogan.readercapstoneapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,19 +19,25 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    private val viewModel by viewModels<MainViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen()
+        installSplashScreen().apply {
+            setKeepOnScreenCondition {
+                viewModel.splashScreenCondition
+            }
+        }
         super.onCreate(savedInstanceState)
         setContent {
             ReaderCapstoneAppTheme {
-                ReaderApp()
+                ReaderApp(viewModel)
             }
         }
     }
 }
 
 @Composable
-fun ReaderApp() {
+fun ReaderApp(viewModel: MainViewModel) {
     Surface(
         color = MaterialTheme.colorScheme.background,
         modifier = Modifier.fillMaxSize(),
@@ -39,7 +46,8 @@ fun ReaderApp() {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                AppNavigation()
+                val startDestination = viewModel.startDestination
+                AppNavigation(startDestination)
             }
         }
     )
