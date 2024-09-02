@@ -1,4 +1,4 @@
-package com.ibrahimcanerdogan.readercapstoneapp.ui.screen.login
+package com.ibrahimcanerdogan.readercapstoneapp.ui.screen.sign
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -10,9 +10,12 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.ibrahimcanerdogan.readercapstoneapp.data.model.MUser
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginViewModel: ViewModel() {
+@HiltViewModel
+class SignViewModel @Inject constructor(): ViewModel() {
     // val loadingState = MutableStateFlow(LoadingState.IDLE)
     private val auth: FirebaseAuth = Firebase.auth
 

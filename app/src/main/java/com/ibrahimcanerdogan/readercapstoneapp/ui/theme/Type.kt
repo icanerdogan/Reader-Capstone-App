@@ -15,48 +15,96 @@ val provider = GoogleFont.Provider(
     certificates = R.array.com_google_android_gms_fonts_certs
 )
 
-val fontName = GoogleFont("Urbanist")
+val baseFontName = GoogleFont("Urbanist")
 
-val fontFamily = FontFamily(
+val baseFontFamily = FontFamily(
     Font(
-        googleFont = fontName,
+        googleFont = baseFontName,
         fontProvider = provider
     )
 )
 
 // Set of Material typography styles to start with
-val Typography = Typography(
+val BaseTypography = Typography(
     bodyLarge = TextStyle(
-        fontFamily = fontFamily,
+        fontFamily = baseFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
     ),
     titleLarge = TextStyle(
-        fontFamily = fontFamily,
+        fontFamily = baseFontFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 32.sp,
         lineHeight = 28.sp,
         letterSpacing = 0.sp
     ),
     titleMedium = TextStyle(
-        fontFamily = fontFamily,
+        fontFamily = baseFontFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 27.sp,
         lineHeight = 25.sp,
         letterSpacing = 0.sp
     ),
     titleSmall = TextStyle(
-        fontFamily = fontFamily,
+        fontFamily = baseFontFamily,
         fontWeight = FontWeight.Bold,
-        fontSize = 22.sp,
+        fontSize = 18.sp,
         lineHeight = 20.sp,
         letterSpacing = 0.sp
     ),
     labelSmall = TextStyle(
-        fontFamily = fontFamily,
+        fontFamily = baseFontFamily,
         fontWeight = FontWeight.Medium,
+        fontSize = 11.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp
+    )
+)
+
+val serifFontName = GoogleFont("DM Serif Text")
+
+val serifFontFamily = FontFamily(
+    Font(
+        googleFont = serifFontName,
+        fontProvider = provider
+    )
+)
+
+// Set of Material typography styles to start with
+val SerifTypography = Typography(
+    titleLarge = TextStyle(
+        fontFamily = serifFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 32.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp
+    ),
+    titleMedium = TextStyle(
+        fontFamily = serifFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 27.sp,
+        lineHeight = 25.sp,
+        letterSpacing = 0.sp
+    ),
+    titleSmall = TextStyle(
+        fontFamily = serifFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 18.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.sp
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = serifFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
+    ),
+    labelSmall = TextStyle(
+        fontFamily = serifFontFamily,
+        fontWeight = FontWeight.Normal,
         fontSize = 11.sp,
         lineHeight = 16.sp,
         letterSpacing = 0.5.sp

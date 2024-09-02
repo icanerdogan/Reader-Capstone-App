@@ -12,7 +12,6 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -22,10 +21,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.detail.DetailScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.home.HomeScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.home.HomeViewModel
-import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.login.LoginScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.onboarding.OnboardingScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.search.SearchScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.search.SearchViewModel
+import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.sign.SignInScreen
+import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.sign.SignUpScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.static.StaticScreen
 import com.ibrahimcanerdogan.readercapstoneapp.ui.screen.update.UpdateScreen
 import kotlinx.coroutines.flow.first
@@ -53,7 +53,7 @@ fun AppNavigation() {
             }
         }
     }else if (currentUser) {
-        startDestination = AppScreen.LoginScreen.name
+        startDestination = AppScreen.SignInScreen.name
     } else {
         startDestination = AppScreen.ReaderHomeScreen.name
     }
@@ -66,8 +66,12 @@ fun AppNavigation() {
             OnboardingScreen(navController = navController)
         }
 
-        composable(AppScreen.LoginScreen.name) {
-            LoginScreen(navController = navController)
+        composable(AppScreen.SignInScreen.name) {
+            SignInScreen(navController = navController)
+        }
+
+        composable(AppScreen.SignUpScreen.name) {
+            SignUpScreen(navController = navController)
         }
 
         composable(AppScreen.ReaderStatsScreen.name) {

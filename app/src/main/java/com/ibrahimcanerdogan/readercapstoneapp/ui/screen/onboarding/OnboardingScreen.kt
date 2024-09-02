@@ -67,7 +67,7 @@ fun OnboardingScreen(navController: NavHostController) {
                 }
             } else {
                 OnboardingGetStartedButton {
-                    navController.navigate(AppScreen.LoginScreen.name)
+                    navController.navigate(AppScreen.SignInScreen.name)
                 }
             }
         }

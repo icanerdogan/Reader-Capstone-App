@@ -249,7 +249,7 @@ fun ReaderAppBar(
             IconButton(onClick = {
                 FirebaseAuth.getInstance()
                     .signOut().run {
-                        navController.navigate(AppScreen.LoginScreen.name)
+                        navController.navigate(AppScreen.SignInScreen.name)
                     }
             }) {
                 if (showProfile) Row() {
